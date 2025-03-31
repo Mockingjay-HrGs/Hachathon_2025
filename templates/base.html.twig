@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        {% block stylesheets %}
+        {% endblock %}
+    </head>
+        {% block javascripts %}
+          <script src="{{ asset('js/sidebar.js') }}"></script>
+          <script src="{{ asset('js/video.js') }}"></script>
+          <script src="{{ asset('js/slider.js') }}"></script>
+        {% endblock %}
+
+    <body>
+        {% block body %}{% endblock %}
+        {% if app.request.attributes.get('_route') != 'home' %}
+          <a href="{{ path('home') }}" class="top-home-button">🏠 Accueil</a>
+        {% endif %}
+
+
+
+
+        <footer class="footer">
+          <div class="footer-top">
+            <p><strong>ON VOUS DIT TOUT !</strong></p>
+            <p>
+              Retrouvez les informations sur les qualités et caractéristiques environnementales de nos produits
+              en application de la loi AGEC (Anti-gaspillage pour une économie circulaire) sur le site mutualisé de la Société Coopérative d’Intérêt Collectif NumAlim :
+              <a href="https://www.numalim.fr" target="_blank" rel="noopener noreferrer">www.numalim.fr</a>
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <div class="footer-nav">
+              <a href="#">Contactez-nous</a> -
+              <a href="#">Recrutement</a> -
+              <a href="#">Mentions légales</a> -
+              <a href="#">Nos engagements</a>
+            </div>
+            <div class="footer-nav">
+              <a href="#">Plan du site</a> -
+              <a href="#">Cookies</a> -
+              <a href="#">Charte pour la protection des données</a>
+            </div>
+          </div>
+
+          <div class="footer-social">
+            <a href="#"><img src="{{ asset('images/social/instagram.svg') }}" alt="Instagram" width="20"></a>
+            <a href="#"><img src="{{ asset('images/social/facebook.svg') }}" alt="Facebook" width="20"></a>
+            <a href="#"><img src="{{ asset('images/social/linkedin.svg') }}" alt="LinkedIn" width="20"></a>
+            <a href="#"><img src="{{ asset('images/social/youtube.svg') }}" alt="YouTube" width="20"></a>
+          </div>
+
+          <div class="footer-bottom">
+            <p>&copy; Les Crudettes – Réalisation Atmedia</p>
+          </div>
+        </footer>
+
+    </body>
+</html>

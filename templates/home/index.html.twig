@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<div class="layout">
+  <aside class="sidebar">
+    <img src="{{ asset('images/logo.webp') }}" alt="Logo Les Crudettes" class="logo">
+
+    <nav class="nav-links">
+      <div class="menu-item">
+        <button class="menu-toggle">Accueil</button>
+      </div>
+
+      <div class="menu-item">
+        <button class="menu-toggle">Il était une fois ...</button>
+        <div class="submenu">
+          <a href="{{ path('histoire_croyances') }}">Des croyances authentiques</a>
+          <a href="{{ path('histoire_engagements') }}">Nos Salades s’engagent</a>
+          <a href="{{ path('histoire_histoire') }}">Une véritable histoire</a>
+          <a href="{{ path('histoire_metiers') }}">De vrais et beaux métiers</a>
+
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button class="menu-toggle">Des produits vraiment craquants</button>
+        <div class="submenu">
+          <a href="#">Salades et crudités pour fins gourmets</a>
+          <a href="#">Herbes et petits trucs pour grandes salades</a>
+          <a href="#">Nos légumes à cuire et à réchauffer</a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button class="menu-toggle">Et des astuces trop chouettes</button>
+        <div class="submenu">
+          <a href="#">Nos idées recettes, c’est par ici</a>
+          <a href="#">Nos vidéos recettes, c’est par ici</a>
+          <a href="#">L’actu toute fraîche, c’est par là</a>
+          <a href="#">Nos petites astuces, c’est tout le temps</a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <button class="menu-toggle">Contact</button>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+
+    <section class="slider-section">
+      <div class="slider" id="slider">
+        <div class="slide active">
+          <img src="{{ asset('images/slider7.webp') }}" alt="Baby carottes à partager">
+        </div>
+        <div class="slide">
+          <img src="{{ asset('images/slider8.webp') }}" alt="Purée maison Les Crudettes">
+        </div>
+      </div>
+
+      <button class="slider-btn prev" aria-label="Image précédente">&#10094;</button>
+      <button class="slider-btn next" aria-label="Image suivante">&#10095;</button>
+    </section>
+
+
+    <section class="slider-section section-container">
+        <section class="video-section">
+        <h2 class="video-intro">
+            LE PROJET SERRE DU FUTUR A PU VOIR LE JOUR GRÂCE AU SOUTIEN DE L’UNION EUROPÉENNE ET DE LA
+            RÉGION CENTRE VAL DE LOIRE AU TRAVERS DU FONDS FEDER
+        </h2>
+
+        <div class="video-placeholder" id="video-container">
+            <img src="{{ asset('images/video-thumbnail.webp') }}" alt="Voir la vidéo" id="load-video" class="video-thumb">
+        </div>
+        </section>
+    </section>
+
+
+
+  </main>
+</div>
+{% endblock %}
