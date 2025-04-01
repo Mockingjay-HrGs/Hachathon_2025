@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Salades{% endblock %}
+
+{% block body %}
+<section style="
+    background-color: #f5f5f5;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: center;
+">
+    <h1 style="font-size: 2.2rem; margin-bottom: 1rem;">
+        <span style="color: #00a0df;">LES SALADES</span>
+        &nbsp;
+        <span style="background-color: #7e1e85; color: white; padding: 0.2rem 0.6rem; display: inline-block; transform: rotate(-2deg);">CRUDITÉS</span>
+        <br>
+        <span style="color: #7e1e85;">POUR FINS GOURMETS</span>
+    </h1>
+
+    <p style="line-height: 1.7; font-size: 1.1rem; color: #333;">
+        Les Crudettes vous proposent des salades et crudités prêtes à l'emploi et qui en ont dans le sachet !<br>
+        Cultivées en pleine terre, elles sont soigneusement récoltées et épluchées à la main puis fraîchement emballées dans le Val de Loire et en Provence.<br>
+        Croquantes, tendres ou corsées, les salades Les Crudettes ne font pas de chichis !<br>
+        Elles s'enlacent entre elles sans compromis ou se mélangent avec nos crudités toutes variétés et saveurs confondues !
+    </p>
+</section>
+
+
+
+<div class="grid">
+    {% for produit in produits %}
+        <div class="carte-produit" data-id="{{ produit.id }}">
+            <img src="{{ asset(produit.image|replace({'public/': ''})) }}" alt="{{ produit.titre }}" class="produit-img" loading="lazy">
+            <h3>{{ produit.titre }}</h3>
+        </div>
+
+    {% else %}
+        <p>Aucun produit trouvé. </p>
+    {% endfor %}
+</div>
+
+
+<div id="modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+<script src="{{ asset('js/modal.js') }}"></script>
+
+
+
+{% endblock %}

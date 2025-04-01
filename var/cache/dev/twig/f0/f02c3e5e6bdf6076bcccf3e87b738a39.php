@@ -106,54 +106,47 @@ class __TwigTemplate_be0ffc76239628d0a207e95af47b72a7 extends Template
 
     <nav class=\"nav-links\">
       <div class=\"menu-item\">
-        <button class=\"menu-toggle\">Accueil</button>
-      </div>
-
-      <div class=\"menu-item\">
         <button class=\"menu-toggle\">Il était une fois ...</button>
         <div class=\"submenu\">
           <a href=\"";
-        // line 18
+        // line 14
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("histoire_croyances");
         yield "\">Des croyances authentiques</a>
           <a href=\"";
-        // line 19
+        // line 15
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("histoire_engagements");
         yield "\">Nos Salades s’engagent</a>
           <a href=\"";
-        // line 20
+        // line 16
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("histoire_histoire");
         yield "\">Une véritable histoire</a>
-          <a href=\"";
-        // line 21
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("histoire_metiers");
-        yield "\">De vrais et beaux métiers</a>
-
         </div>
       </div>
 
       <div class=\"menu-item\">
         <button class=\"menu-toggle\">Des produits vraiment craquants</button>
         <div class=\"submenu\">
-          <a href=\"#\">Salades et crudités pour fins gourmets</a>
-          <a href=\"#\">Herbes et petits trucs pour grandes salades</a>
-          <a href=\"#\">Nos légumes à cuire et à réchauffer</a>
+          <a href=\"";
+        // line 23
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produits_salades");
+        yield "\">Salades et crudités pour fins gourmets</a>
+          <a href=\"";
+        // line 24
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("produits_herbes");
+        yield "\">Herbes et petits trucs pour grandes salades</a>
         </div>
       </div>
 
       <div class=\"menu-item\">
         <button class=\"menu-toggle\">Et des astuces trop chouettes</button>
         <div class=\"submenu\">
-          <a href=\"#\">Nos idées recettes, c’est par ici</a>
-          <a href=\"#\">Nos vidéos recettes, c’est par ici</a>
-          <a href=\"#\">L’actu toute fraîche, c’est par là</a>
-          <a href=\"#\">Nos petites astuces, c’est tout le temps</a>
+          <a href=\"";
+        // line 31
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("recettes_index");
+        yield "\">Nos idées recettes</a>
         </div>
       </div>
 
-      <div class=\"menu-item\">
-        <button class=\"menu-toggle\">Contact</button>
-      </div>
     </nav>
   </aside>
 
@@ -163,13 +156,13 @@ class __TwigTemplate_be0ffc76239628d0a207e95af47b72a7 extends Template
       <div class=\"slider\" id=\"slider\">
         <div class=\"slide active\">
           <img src=\"";
-        // line 56
+        // line 43
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/slider7.webp"), "html", null, true);
         yield "\" alt=\"Baby carottes à partager\">
         </div>
         <div class=\"slide\">
           <img src=\"";
-        // line 59
+        // line 46
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/slider8.webp"), "html", null, true);
         yield "\" alt=\"Purée maison Les Crudettes\">
         </div>
@@ -189,7 +182,7 @@ class __TwigTemplate_be0ffc76239628d0a207e95af47b72a7 extends Template
 
         <div class=\"video-placeholder\" id=\"video-container\">
             <img src=\"";
-        // line 76
+        // line 63
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/video-thumbnail.webp"), "html", null, true);
         yield "\" alt=\"Voir la vidéo\" id=\"load-video\" class=\"video-thumb\">
         </div>
@@ -231,7 +224,7 @@ class __TwigTemplate_be0ffc76239628d0a207e95af47b72a7 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  193 => 76,  173 => 59,  167 => 56,  129 => 21,  125 => 20,  121 => 19,  117 => 18,  104 => 8,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  186 => 63,  166 => 46,  160 => 43,  145 => 31,  135 => 24,  131 => 23,  121 => 16,  117 => 15,  113 => 14,  104 => 8,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -247,42 +240,29 @@ class __TwigTemplate_be0ffc76239628d0a207e95af47b72a7 extends Template
 
     <nav class=\"nav-links\">
       <div class=\"menu-item\">
-        <button class=\"menu-toggle\">Accueil</button>
-      </div>
-
-      <div class=\"menu-item\">
         <button class=\"menu-toggle\">Il était une fois ...</button>
         <div class=\"submenu\">
           <a href=\"{{ path('histoire_croyances') }}\">Des croyances authentiques</a>
           <a href=\"{{ path('histoire_engagements') }}\">Nos Salades s’engagent</a>
           <a href=\"{{ path('histoire_histoire') }}\">Une véritable histoire</a>
-          <a href=\"{{ path('histoire_metiers') }}\">De vrais et beaux métiers</a>
-
         </div>
       </div>
 
       <div class=\"menu-item\">
         <button class=\"menu-toggle\">Des produits vraiment craquants</button>
         <div class=\"submenu\">
-          <a href=\"#\">Salades et crudités pour fins gourmets</a>
-          <a href=\"#\">Herbes et petits trucs pour grandes salades</a>
-          <a href=\"#\">Nos légumes à cuire et à réchauffer</a>
+          <a href=\"{{ path('produits_salades') }}\">Salades et crudités pour fins gourmets</a>
+          <a href=\"{{ path('produits_herbes') }}\">Herbes et petits trucs pour grandes salades</a>
         </div>
       </div>
 
       <div class=\"menu-item\">
         <button class=\"menu-toggle\">Et des astuces trop chouettes</button>
         <div class=\"submenu\">
-          <a href=\"#\">Nos idées recettes, c’est par ici</a>
-          <a href=\"#\">Nos vidéos recettes, c’est par ici</a>
-          <a href=\"#\">L’actu toute fraîche, c’est par là</a>
-          <a href=\"#\">Nos petites astuces, c’est tout le temps</a>
+          <a href=\"{{ path('recettes_index') }}\">Nos idées recettes</a>
         </div>
       </div>
 
-      <div class=\"menu-item\">
-        <button class=\"menu-toggle\">Contact</button>
-      </div>
     </nav>
   </aside>
 
@@ -321,6 +301,6 @@ class __TwigTemplate_be0ffc76239628d0a207e95af47b72a7 extends Template
   </main>
 </div>
 {% endblock %}
-", "home/index.html.twig", "C:\\Users\\dunis\\Documents\\Projet Webeol\\Webeol\\templates\\home\\index.html.twig");
+", "home/index.html.twig", "C:\\Users\\dunis\\OneDrive\\Documents\\Projet Webeol\\Webeol\\templates\\home\\index.html.twig");
     }
 }

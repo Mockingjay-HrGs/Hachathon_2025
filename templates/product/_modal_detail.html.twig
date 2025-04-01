@@ -1,0 +1,10 @@
+{# templates/product/_modal_detail.html.twig #}
+<h2>{{ produit.titre }}</h2>
+
+<img src="{{ asset(produit.image|replace({'public/': ''})) }}" alt="{{ produit.titre }}"
+     style="max-width: 300px; width: 100%; border-radius: 8px; margin: 1rem 0;">
+
+
+<p><strong>Ingrédients :</strong> {{ produit.ingredients }}</p>
+
+<p style="white-space: pre-wrap;">{{ produit.bio }}</p>

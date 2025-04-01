@@ -9,42 +9,29 @@
 
     <nav class="nav-links">
       <div class="menu-item">
-        <button class="menu-toggle">Accueil</button>
-      </div>
-
-      <div class="menu-item">
         <button class="menu-toggle">Il était une fois ...</button>
         <div class="submenu">
           <a href="{{ path('histoire_croyances') }}">Des croyances authentiques</a>
           <a href="{{ path('histoire_engagements') }}">Nos Salades s’engagent</a>
           <a href="{{ path('histoire_histoire') }}">Une véritable histoire</a>
-          <a href="{{ path('histoire_metiers') }}">De vrais et beaux métiers</a>
-
         </div>
       </div>
 
       <div class="menu-item">
         <button class="menu-toggle">Des produits vraiment craquants</button>
         <div class="submenu">
-          <a href="#">Salades et crudités pour fins gourmets</a>
-          <a href="#">Herbes et petits trucs pour grandes salades</a>
-          <a href="#">Nos légumes à cuire et à réchauffer</a>
+          <a href="{{ path('produits_salades') }}">Salades et crudités pour fins gourmets</a>
+          <a href="{{ path('produits_herbes') }}">Herbes et petits trucs pour grandes salades</a>
         </div>
       </div>
 
       <div class="menu-item">
         <button class="menu-toggle">Et des astuces trop chouettes</button>
         <div class="submenu">
-          <a href="#">Nos idées recettes, c’est par ici</a>
-          <a href="#">Nos vidéos recettes, c’est par ici</a>
-          <a href="#">L’actu toute fraîche, c’est par là</a>
-          <a href="#">Nos petites astuces, c’est tout le temps</a>
+          <a href="{{ path('recettes_index') }}">Nos idées recettes</a>
         </div>
       </div>
 
-      <div class="menu-item">
-        <button class="menu-toggle">Contact</button>
-      </div>
     </nav>
   </aside>
 

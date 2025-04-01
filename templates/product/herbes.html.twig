@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Herbes{% endblock %}
+
+{% block body %}
+<section style="
+    background-color: #f5f5f5;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: center;
+">
+    <h1 style="font-size: 2rem; margin-bottom: 1rem;">
+        <span style="color: #00a0df;">HERBES</span>
+        & <span style="background-color: #7e1e85; color: white; padding: 0.2rem 0.6rem; display: inline-block;">PETITS TRUCS</span><br>
+        POUR GRANDES SALADES
+    </h1>
+
+    <p style="line-height: 1.7; font-size: 1.1rem; color: #333;">
+        Parfumez vos salades, relevez vos plats et surprenez vos papilles avec notre sélection d’herbes fraîches.<br>
+        Basilic, ciboulette, coriandre... tous les petits trucs pour créer de grandes salades !
+    </p>
+</section>
+
+<div class="grid">
+    {% for produit in produits %}
+        <div class="carte-produit" data-id="{{ produit.id }}">
+            <img src="{{ asset(produit.image|replace({'public/': ''})) }}" alt="{{ produit.titre }}" class="produit-img" loading="lazy">
+            <h3>{{ produit.titre }}</h3>
+        </div>
+    {% else %}
+        <p>Aucun produit trouvé.</p>
+    {% endfor %}
+</div>
+
+<!-- Modale (même que pour les salades) -->
+<div id="modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <div id="modal-body"></div>
+    </div>
+</div>
+
+<script src="{{ asset('js/modal.js') }}"></script>
+{% endblock %}

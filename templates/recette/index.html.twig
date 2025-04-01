@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos recettes{% endblock %}
+
+{% block body %}
+<h1 style="text-align: center; margin-top: 2rem;">Nos idées recettes 🥗</h1>
+
+<div class="grid">
+    {% for recette in recettes %}
+        <a href="{{ path('recette_detail', {'id': recette.id}) }}" class="carte-produit" style="text-decoration: none;">
+            <img src="{{ asset(recette.image|replace({'public/': ''})) }}" alt="{{ recette.titre }}" class="produit-img">
+            <h3>{{ recette.titre }}</h3>
+        </a>
+    {% else %}
+        <p>Aucune recette trouvée.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -20,6 +20,9 @@ return [
         '/histoire/histoire' => [[['_route' => 'histoire_histoire', '_controller' => 'App\\Controller\\HistoireController::histoire'], null, null, null, false, false, null]],
         '/histoire/metiers' => [[['_route' => 'histoire_metiers', '_controller' => 'App\\Controller\\HistoireController::metiers'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/salades' => [[['_route' => 'produits_salades', '_controller' => 'App\\Controller\\ProductController::salades'], null, null, null, false, false, null]],
+        '/herbes' => [[['_route' => 'produits_herbes', '_controller' => 'App\\Controller\\ProductController::herbes'], null, null, null, false, false, null]],
+        '/recettes' => [[['_route' => 'recettes_index', '_controller' => 'App\\Controller\\RecetteController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -41,6 +44,11 @@ return [
                         .')'
                     .')'
                 .')'
+                .'|/produit/([^/]++)(?'
+                    .'|(*:222)'
+                    .'|/ajax(*:235)'
+                .')'
+                .'|/recette/([^/]++)(*:261)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -51,8 +59,11 @@ return [
         148 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         168 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        191 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        222 => [[['_route' => 'produit_detail', '_controller' => 'App\\Controller\\ProductController::detail'], ['id'], null, null, false, true, null]],
+        235 => [[['_route' => 'produit_detail_ajax', '_controller' => 'App\\Controller\\ProductController::ajaxDetail'], ['id'], null, null, false, false, null]],
+        261 => [
+            [['_route' => 'recette_detail', '_controller' => 'App\\Controller\\RecetteController::detail'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

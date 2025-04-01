@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ produit.titre }}{% endblock %}
+
+{% block body %}
+<h1>{{ produit.titre }}</h1>
+
+<img src="{{ asset(produit.image) }}" alt="{{ produit.titre }}" style="max-width: 400px; border-radius: 10px;"><br><br>
+
+<p><strong>Ingrédients :</strong> {{ produit.ingredients }}</p>
+
+<p style="white-space: pre-wrap;">{{ produit.bio }}</p>
+
+<a href="{{ path('produits_salades') }}">← Retour aux salades</a>
+{% endblock %}
